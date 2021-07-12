@@ -50,7 +50,7 @@ fmt:
 
 .PHONY: build
 build:
-	go build $(LDFLAGS) ./cmd/trivy
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build $(LDFLAGS) ./cmd/trivy
 
 .PHONY: protoc
 protoc:
